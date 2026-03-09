@@ -72,11 +72,39 @@ body {
   padding: 28px;
 }
 
+/* ===== タスク種別トグル ===== */
+.type-toggle {
+  display: flex;
+  gap: 0;
+  margin-bottom: 12px;
+  border: 2px solid #e0d8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.type-btn {
+  padding: 8px 16px;
+  border: none;
+  background: #fff;
+  color: #999;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.type-btn.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+}
+
 /* ===== 入力フォーム ===== */
 .add-options {
   display: flex;
   gap: 8px;
   margin-bottom: 12px;
+  flex-wrap: wrap;
 }
 
 .cat-select {
@@ -258,6 +286,30 @@ body {
 .cat-afternoon { background: #dbeafe; color: #1e40af; }
 .cat-evening   { background: #ede9fe; color: #5b21b6; }
 .cat-anytime   { background: #e0e7ff; color: #3730a3; }
+
+/* ===== 期限バッジ ===== */
+.task-deadline {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.task-deadline.expired {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.task-item.expired {
+  opacity: 0.6;
+  background: #fef2f2;
+}
+
+.task-item.expired .task-name {
+  color: #999;
+}
 
 .delete-btn {
   background: none;
